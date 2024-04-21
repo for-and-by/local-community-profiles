@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../app/components/regions/footer.tsx"],
+  "sourcesContent": ["import type { ReactNode } from \"react\";\nimport React from \"react\";\nimport { Portal } from \"~/components/atoms/portal\";\nimport { Bumper } from \"~/components/atoms/bumper\";\n\nconst REGION_ID = \"footer\";\n\ninterface PropsRoot {\n  children: ReactNode;\n}\n\nfunction Root({ children }: PropsRoot) {\n  return <Portal selector={`#${REGION_ID}`}>{children}</Portal>;\n}\n\nfunction Container() {\n  return (\n    <Bumper>\n      <div\n        className=\"pointer-events-auto flex flex-col overflow-hidden rounded-t\"\n        id={REGION_ID}\n      />\n    </Bumper>\n  );\n}\n\nconst Footer = Object.assign(Root, { Container });\n\nexport default Footer;\n"],
+  "mappings": ";;;;;;;;;;;;AAYS;AAPT,IAAM,YAAY;AAMlB,SAAS,KAAK,EAAE,SAAS,GAAc;AACrC,SAAO,mDAAC,UAAO,UAAU,IAAI,aAAc,YAApC;AAAA;AAAA;AAAA;AAAA,SAA6C;AACtD;AAEA,SAAS,YAAY;AACnB,SACE,mDAAC,UACC;AAAA,IAAC;AAAA;AAAA,MACC,WAAU;AAAA,MACV,IAAI;AAAA;AAAA,IAFN;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,EAGA,KAJF;AAAA;AAAA;AAAA;AAAA,SAKA;AAEJ;AAEA,IAAM,SAAS,OAAO,OAAO,MAAM,EAAE,UAAU,CAAC;AAEhD,IAAO,iBAAQ;",
+  "names": []
+}

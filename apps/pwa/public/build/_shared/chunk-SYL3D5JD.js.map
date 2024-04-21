@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../app/utils/seo.ts"],
+  "sourcesContent": ["import { config } from \"~/config\";\nimport type { MetaFunction } from \"@remix-run/node\";\n\ninterface Metadata {\n  title?: string;\n  description?: string;\n  image?: string;\n}\n\ntype FormattedMetadata = ReturnType<MetaFunction>;\n\nexport function formatSeoTitle(title?: string) {\n  if (!title) return config.seo.default.title;\n  return `${title} | ${config.seo.default.title}`;\n}\n\nexport function formatMetadata(metadata: Metadata) {\n  const formattedMetdata: FormattedMetadata = {\n    title: formatSeoTitle(metadata.title),\n    description: metadata?.description ?? config.seo.default.description,\n  };\n\n  if (metadata.image) formattedMetdata[\"og-image\"] = metadata.image;\n\n  return formattedMetdata;\n}\n"],
+  "mappings": ";;;;;AAWO,SAAS,eAAe,OAAgB;AAC7C,MAAI,CAAC;AAAO,WAAO,OAAO,IAAI,QAAQ;AACtC,SAAO,GAAG,WAAW,OAAO,IAAI,QAAQ;AAC1C;AAEO,SAAS,eAAe,UAAoB;AAhBnD;AAiBE,QAAM,mBAAsC;AAAA,IAC1C,OAAO,eAAe,SAAS,KAAK;AAAA,IACpC,cAAa,0CAAU,gBAAV,YAAyB,OAAO,IAAI,QAAQ;AAAA,EAC3D;AAEA,MAAI,SAAS;AAAO,qBAAiB,cAAc,SAAS;AAE5D,SAAO;AACT;",
+  "names": []
+}

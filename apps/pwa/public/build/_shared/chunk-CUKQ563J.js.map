@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../app/hooks/map/use-map-lock.ts"],
+  "sourcesContent": ["import { useMapContext } from \"~/components/organisms/map/context\";\n\nexport function useMapLock() {\n  const { isLocked, setIsLocked } = useMapContext();\n\n  const actions = {\n    setIsLocked: setIsLocked,\n    setLock: () => setIsLocked(true),\n    setUnlock: () => setIsLocked(false),\n  };\n\n  return [isLocked, actions] as [typeof isLocked, typeof actions];\n}\n"],
+  "mappings": ";;;;;AAEO,SAAS,aAAa;AAC3B,QAAM,EAAE,UAAU,YAAY,IAAI,cAAc;AAEhD,QAAM,UAAU;AAAA,IACd;AAAA,IACA,SAAS,MAAM,YAAY,IAAI;AAAA,IAC/B,WAAW,MAAM,YAAY,KAAK;AAAA,EACpC;AAEA,SAAO,CAAC,UAAU,OAAO;AAC3B;",
+  "names": []
+}

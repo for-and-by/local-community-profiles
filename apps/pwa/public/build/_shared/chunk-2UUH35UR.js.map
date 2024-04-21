@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../app/hooks/use-async-action.ts"],
+  "sourcesContent": ["import { useCallback, useState } from \"react\";\n\ntype UseAsyncActionProps<Data, Error, Args extends any[]> = {\n  action: (...args: Args) => Promise<Data>;\n  onSuccess?: (data: Data) => void;\n  onError?: (error: Error) => void;\n  onEnd?: () => void;\n};\n\nexport function useAsyncAction<Data, Error, Args extends any[]>(\n  props: UseAsyncActionProps<Data, Error, Args>\n) {\n  const [isLoading, setIsLoading] = useState<boolean>();\n\n  const handleAsyncAction = useCallback((...args: Args) => {\n    setIsLoading(true);\n    props\n      .action(...args)\n      .then((data) => {\n        props?.onSuccess?.(data);\n      })\n      .catch((error) => {\n        props?.onError?.(error);\n      })\n      .finally(() => {\n        props?.onEnd?.();\n        setIsLoading(false);\n      });\n\n    //\teslint-disable-next-line react-hooks/exhaustive-deps\n  }, []);\n\n  return { isLoading, handleAsyncAction };\n}\n"],
+  "mappings": ";;;;;;;;AAAA,mBAAsC;AAS/B,SAAS,eACd,OACA;AACA,QAAM,CAAC,WAAW,YAAY,QAAI,uBAAkB;AAEpD,QAAM,wBAAoB,0BAAY,IAAI,SAAe;AACvD,iBAAa,IAAI;AACjB,UACG,OAAO,GAAG,IAAI,EACd,KAAK,CAAC,SAAS;AAlBtB;AAmBQ,2CAAO,cAAP,+BAAmB;AAAA,IACrB,CAAC,EACA,MAAM,CAAC,UAAU;AArBxB;AAsBQ,2CAAO,YAAP,+BAAiB;AAAA,IACnB,CAAC,EACA,QAAQ,MAAM;AAxBrB;AAyBQ,2CAAO,UAAP;AACA,mBAAa,KAAK;AAAA,IACpB,CAAC;AAAA,EAGL,GAAG,CAAC,CAAC;AAEL,SAAO,EAAE,WAAW,kBAAkB;AACxC;",
+  "names": []
+}

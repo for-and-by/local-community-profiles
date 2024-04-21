@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../app/components/regions/body.tsx"],
+  "sourcesContent": ["import type { ReactNode } from \"react\";\nimport React from \"react\";\nimport { Portal } from \"~/components/atoms/portal\";\n\nconst REGION_ID = \"body\";\n\ninterface PropsRoot {\n  children: ReactNode;\n}\n\nfunction Root({ children }: PropsRoot) {\n  return <Portal selector={`#${REGION_ID}`}>{children}</Portal>;\n}\n\nfunction Container() {\n  return (\n    <div\n      className=\"pointer-events-auto my-2 flex flex-col overflow-hidden rounded\"\n      id={REGION_ID}\n    />\n  );\n}\n\nconst Body = Object.assign(Root, { Container });\n\nexport default Body;\n"],
+  "mappings": ";;;;;;;;;;;AAWS;AAPT,IAAM,YAAY;AAMlB,SAAS,KAAK,EAAE,SAAS,GAAc;AACrC,SAAO,mDAAC,UAAO,UAAU,IAAI,aAAc,YAApC;AAAA;AAAA;AAAA;AAAA,SAA6C;AACtD;AAEA,SAAS,YAAY;AACnB,SACE;AAAA,IAAC;AAAA;AAAA,MACC,WAAU;AAAA,MACV,IAAI;AAAA;AAAA,IAFN;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,EAGA;AAEJ;AAEA,IAAM,OAAO,OAAO,OAAO,MAAM,EAAE,UAAU,CAAC;AAE9C,IAAO,eAAQ;",
+  "names": []
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../app/hooks/filter/use-filter-store.ts"],
+  "sourcesContent": ["import type { Severity, Type } from \"@safer-streets/db\";\nimport type { StateCreator } from \"zustand\";\nimport { create } from \"zustand\";\nimport { persist } from \"zustand/middleware\";\n\ninterface State {\n  severities: Severity[];\n  types: Type[];\n}\n\ninterface Actions {\n  setSeverities: (severities: Severity[]) => void;\n  setTypes: (types: Type[]) => void;\n}\n\ninterface Store extends Actions, State {}\n\nconst initialState: State = {\n  severities: [],\n  types: [],\n};\n\nconst store: StateCreator<Store, [[\"zustand/persist\", unknown]]> = (set) => ({\n  ...initialState,\n  setSeverities: (severities) => {\n    set({ severities });\n  },\n  setTypes: (types) => {\n    set({ types });\n  },\n});\n\nexport const useFilterStore = create<Store>()(\n  persist(store, {\n    name: \"filter\",\n  })\n);\n"],
+  "mappings": ";;;;;;AAiBA,IAAM,eAAsB;AAAA,EAC1B,YAAY,CAAC;AAAA,EACb,OAAO,CAAC;AACV;AAEA,IAAM,QAA6D,CAAC,SAAS;AAAA,EAC3E,GAAG;AAAA,EACH,eAAe,CAAC,eAAe;AAC7B,QAAI,EAAE,WAAW,CAAC;AAAA,EACpB;AAAA,EACA,UAAU,CAAC,UAAU;AACnB,QAAI,EAAE,MAAM,CAAC;AAAA,EACf;AACF;AAEO,IAAM,iBAAiB,OAAc;AAAA,EAC1C,QAAQ,OAAO;AAAA,IACb,MAAM;AAAA,EACR,CAAC;AACH;",
+  "names": []
+}
