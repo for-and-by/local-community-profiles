@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../../app/hooks/filter/use-filter-types.ts"],
-  "sourcesContent": ["import { useFilterStore } from \"~/hooks/filter/use-filter-store\";\nimport type { Type } from \"@safer-streets/db\";\nimport { useEffect, useState } from \"react\";\n\nexport function useFilterTypes(): [Type[], (handle?: string) => Type];\nexport function useFilterTypes(handle: string): Type;\n\nexport function useFilterTypes(handle?: string) {\n  const { types } = useFilterStore();\n\n  function getType(handle?: string) {\n    return types.find((type) => {\n      return type.handle === handle;\n    });\n  }\n\n  const [type, setType] = useState(getType(handle));\n\n  useEffect(() => {\n    if (handle) setType(getType(handle));\n    //\teslint-disable-next-line react-hooks/exhaustive-deps\n  }, [handle]);\n\n  return handle ? type : [types, getType];\n}\n"],
-  "mappings": ";;;;;;;;;;;AAEA,mBAAoC;AAK7B,SAAS,eAAe,QAAiB;AAC9C,QAAM,EAAE,MAAM,IAAI,eAAe;AAEjC,WAAS,QAAQA,SAAiB;AAChC,WAAO,MAAM,KAAK,CAACC,UAAS;AAC1B,aAAOA,MAAK,WAAWD;AAAA,IACzB,CAAC;AAAA,EACH;AAEA,QAAM,CAAC,MAAM,OAAO,QAAI,uBAAS,QAAQ,MAAM,CAAC;AAEhD,8BAAU,MAAM;AACd,QAAI;AAAQ,cAAQ,QAAQ,MAAM,CAAC;AAAA,EAErC,GAAG,CAAC,MAAM,CAAC;AAEX,SAAO,SAAS,OAAO,CAAC,OAAO,OAAO;AACxC;",
-  "names": ["handle", "type"]
-}

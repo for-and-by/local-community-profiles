@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../../app/components/inputs/text.tsx"],
-  "sourcesContent": ["import React from \"react\";\n\nimport type { FieldError } from \"react-hook-form\";\n\nimport Wrapper from \"~/components/inputs/wrapper\";\n\ninterface Props extends React.ComponentPropsWithRef<\"input\"> {\n  icon?: string;\n  label?: string;\n  error?: FieldError;\n}\n\n// eslint-disable-next-line react/display-name\nconst Text = React.forwardRef<HTMLInputElement, Props>(\n  ({ icon = undefined, label, name, error, ...props }, ref) => (\n    <Wrapper label={label} name={name} error={error}>\n      {icon && <i className={`icon ${icon}`} />}\n      <input\n        type=\"text\"\n        className=\"flex-grow bg-transparent focus:outline-none\"\n        ref={ref}\n        name={name}\n        {...props}\n      />\n    </Wrapper>\n  )\n);\n\nexport default Text;\n"],
-  "mappings": ";;;;;;;;;;;;AAAA,mBAAkB;AAgBH;AAHf,IAAM,OAAO,aAAAA,QAAM;AAAA,EACjB,CAAC,EAAE,OAAO,QAAW,OAAO,MAAM,UAAU,MAAM,GAAG,QACnD,mDAAC,WAAQ,OAAc,MAAY,OAChC;AAAA,YAAQ,mDAAC,OAAE,WAAW,QAAQ,UAAtB;AAAA;AAAA;AAAA;AAAA,WAA8B;AAAA,IACvC;AAAA,MAAC;AAAA;AAAA,QACC,MAAK;AAAA,QACL,WAAU;AAAA,QACV;AAAA,QACA;AAAA,QACC,GAAG;AAAA;AAAA,MALN;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,IAMA;AAAA,OARF;AAAA;AAAA;AAAA;AAAA,SASA;AAEJ;AAEA,IAAO,eAAQ;",
-  "names": ["React"]
-}
