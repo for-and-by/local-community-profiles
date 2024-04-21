@@ -19,7 +19,7 @@ import Header from "~/components/regions/header";
 
 export function meta({ data }: MetaArgs<typeof loader>) {
   return formatMetadata({
-    title: `${data?.report.type.title} Report #${data?.report.id}`,
+    title: `${data?.report.type.title} Improvement #${data?.report.id}`,
     description: data?.report.content.details,
     image: data?.report.content.image_url,
   });

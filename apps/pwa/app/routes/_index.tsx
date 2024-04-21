@@ -40,7 +40,7 @@ export default function Home() {
         <div className="flex flex-row items-center space-x-2 bg-white p-2">
           <Link to="/create" className="btn btn-primary w-full">
             <i className="btn-icon icon icon-create" />
-            <p className="btn-text">Create a Report</p>
+            <p className="btn-text">Suggest Improvement</p>
           </Link>
         </div>
       </Footer>

@@ -31,7 +31,7 @@ export default function Wrapper({
           data-align-top:items-start"
       >
         {label ? (
-          <label className="w-16 text-gray-400" htmlFor={name ?? ""}>
+          <label className="w-24 text-gray-400" htmlFor={name ?? ""}>
             {label}
           </label>
         ) : null}

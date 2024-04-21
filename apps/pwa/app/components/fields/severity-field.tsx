@@ -16,13 +16,13 @@ export default function SeverityField() {
     name: "severity",
     control,
     rules: {
-      required: "A severity is required",
+      required: "An importance is required",
     },
   });
 
   return (
     <Select
-      label="Severity"
+      label="Importance"
       options={severities?.map((result) => ({
         label: result.title,
         value: result.handle,

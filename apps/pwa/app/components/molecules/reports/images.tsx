@@ -3,36 +3,28 @@ import { useMapImages } from "~/hooks/map/use-map-images";
 export function MapImages() {
   useMapImages([
     {
-      id: "cyclist",
-      url: "/pins/cyclist.png",
+      id: "ecological",
+      url: "/pins/ecological.png",
     },
     {
-      id: "bushfire",
-      url: "/pins/fire.png",
+      id: "roads",
+      url: "/pins/roads.png",
     },
     {
-      id: "flood",
-      url: "/pins/flood.png",
+      id: "accessibility",
+      url: "/pins/accessibility.png",
     },
     {
-      id: "motorist",
-      url: "/pins/motorist.png",
+      id: "arts",
+      url: "/pins/arts.png",
     },
     {
-      id: "pedestrian",
-      url: "/pins/pedestrian.png",
+      id: "housing",
+      url: "/pins/housing.png",
     },
     {
-      id: "wildlife",
-      url: "/pins/wildlife.png",
-    },
-    {
-      id: "badge-new",
-      url: "/pins/badge-new.png",
-    },
-    {
-      id: "badge-verify",
-      url: "/pins/badge-verify.png",
+      id: "other",
+      url: "/pins/other.png",
     },
   ]);
 

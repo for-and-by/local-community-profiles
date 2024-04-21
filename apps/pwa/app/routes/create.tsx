@@ -15,7 +15,7 @@ import { ProgressBar } from "~/components/atoms/progress-bar";
 
 export function meta() {
   return formatMetadata({
-    title: "Create New Report",
+    title: "Suggest Improvement",
   });
 }
 
@@ -78,7 +78,7 @@ export default function CreateIndex() {
       </Header>
       <Outlet context={value} />
       <Warning.Panel
-        heading="Cancel Report Submission"
+        heading="Cancel Suggesstion"
         body="Are you sure you want to cancel this submission? All data submitted up to this point will be lost."
         isShow={isShow}
         onHide={hideWarning}

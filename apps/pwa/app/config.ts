@@ -1,9 +1,9 @@
 export const config = {
   seo: {
     default: {
-      title: "Safer Streets",
+      title: "Local Community Priorites",
       description:
-        "Safer Streets is a community managed hazard reporting platform that helps individuals to share safety issues with their local area.",
+        "Local Community Priorities is a platform for voicing any improvements you want seen in your area.",
     },
   },
   css: {
@@ -33,7 +33,7 @@ export const config = {
       increment: 0.5,
     },
     center: {
-      default: [153.026, -27.4705] as [number, number], // Brisbane LngLat
+      default: [151.2093, -33.8688] as [number, number], // Brisbane LngLat
     },
   },
 };
